@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:rowCount="4">
+
+    <Button
+        android:id="@+id/choose_style_1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary1"/>
+
+    <Button
+        android:id="@+id/choose_style_2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary2"/>
+
+    <Button
+        android:id="@+id/choose_style_3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary3"/>
+
+    <Button
+        android:id="@+id/choose_style_4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary4"/>
+
+    <Button
+        android:id="@+id/choose_style_5"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary5"/>
+
+    <Button
+        android:id="@+id/choose_style_6"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary6"/>
+
+    <Button
+        android:id="@+id/choose_style_7"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary7"/>
+
+    <Button
+        android:id="@+id/choose_style_8"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary8"/>
+
+    <Button
+        android:id="@+id/choose_style_9"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary9"/>
+
+    <Button
+        android:id="@+id/choose_style_10"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary10"/>
+
+    <Button
+        android:id="@+id/choose_style_11"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary11"/>
+
+    <Button
+        android:id="@+id/choose_style_12"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_0"
+        android:backgroundTint="@color/colorPrimary12"/>
+
+</GridLayout>

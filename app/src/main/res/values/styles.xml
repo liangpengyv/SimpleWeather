@@ -1,11 +1,111 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <style name="FloatActivity" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@drawable/float_box</item>
+    </style>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@android:color/white</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:tint">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary1</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark1</item>
+        <item name="colorAccent">@color/colorPrimary1</item>
+        <item name="android:colorBackground">@color/colorPrimary1</item>
+        <item name="android:tint">@color/colorPrimary1</item>
+    </style>
+
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary2</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
+        <item name="colorAccent">@color/colorPrimary2</item>
+        <item name="android:colorBackground">@color/colorPrimary2</item>
+        <item name="android:tint">@color/colorPrimary2</item>
+    </style>
+
+    <style name="AppTheme3" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary3</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark3</item>
+        <item name="colorAccent">@color/colorPrimary3</item>
+        <item name="android:colorBackground">@color/colorPrimary3</item>
+        <item name="android:tint">@color/colorPrimary3</item>
+    </style>
+
+    <style name="AppTheme4" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary4</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark4</item>
+        <item name="colorAccent">@color/colorPrimary4</item>
+        <item name="android:colorBackground">@color/colorPrimary4</item>
+        <item name="android:tint">@color/colorPrimary4</item>
+    </style>
+
+    <style name="AppTheme5" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary5</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark5</item>
+        <item name="colorAccent">@color/colorPrimary5</item>
+        <item name="android:colorBackground">@color/colorPrimary5</item>
+        <item name="android:tint">@color/colorPrimary5</item>
+    </style>
+
+    <style name="AppTheme6" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary6</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark6</item>
+        <item name="colorAccent">@color/colorPrimary6</item>
+        <item name="android:colorBackground">@color/colorPrimary6</item>
+        <item name="android:tint">@color/colorPrimary6</item>
+    </style>
+
+    <style name="AppTheme7" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary7</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark7</item>
+        <item name="colorAccent">@color/colorPrimary7</item>
+        <item name="android:colorBackground">@color/colorPrimary7</item>
+        <item name="android:tint">@color/colorPrimary7</item>
+    </style>
+
+    <style name="AppTheme8" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary8</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark8</item>
+        <item name="colorAccent">@color/colorPrimary8</item>
+        <item name="android:colorBackground">@color/colorPrimary8</item>
+        <item name="android:tint">@color/colorPrimary8</item>
+    </style>
+
+    <style name="AppTheme9" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary9</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark9</item>
+        <item name="colorAccent">@color/colorPrimary9</item>
+        <item name="android:colorBackground">@color/colorPrimary9</item>
+        <item name="android:tint">@color/colorPrimary9</item>
+    </style>
+
+    <style name="AppTheme10" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary10</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark10</item>
+        <item name="colorAccent">@color/colorPrimary10</item>
+        <item name="android:colorBackground">@color/colorPrimary10</item>
+        <item name="android:tint">@color/colorPrimary10</item>
+    </style>
+
+    <style name="AppTheme11" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary11</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark11</item>
+        <item name="colorAccent">@color/colorPrimary11</item>
+        <item name="android:colorBackground">@color/colorPrimary11</item>
+        <item name="android:tint">@color/colorPrimary11</item>
+    </style>
+
+    <style name="AppTheme12" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary12</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark12</item>
+        <item name="colorAccent">@color/colorPrimary12</item>
+        <item name="android:colorBackground">@color/colorPrimary12</item>
+        <item name="android:tint">@color/colorPrimary12</item>
     </style>
 
 </resources>

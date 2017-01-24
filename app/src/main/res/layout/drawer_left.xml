@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/menu_list"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_city"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@mipmap/drawer_bottom">
+
+        <ImageView
+            android:id="@+id/ic_0_bottom"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/ic_00"
+            android:tint="@android:color/white"/>
+
+        <ImageView
+            android:id="@+id/ic_000"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="55dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            android:tint="@null"/>
+
+        <TextView
+            android:id="@+id/nonce_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ic_0_bottom"
+            android:layout_marginLeft="18dp"
+            android:text="@string/nonce_city"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/nonce_city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/nonce_city"
+            android:layout_below="@id/nonce_city"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/simple_1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/title_city"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/city_list"
+            android:textSize="15sp"/>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/city_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/simple_2"
+        android:layout_below="@id/simple_1"
+        android:background="#FFFFFF"
+        android:divider="@null"/>
+
+    <RelativeLayout
+        android:id="@+id/simple_2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_above="@+id/menu_list_bottom"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/temp_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BEBEBE"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/temp_1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/choose"
+            android:textSize="15sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_list_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+
+            <Button
+                android:id="@+id/add_city"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="-8dp"
+                android:layout_marginLeft="-8dp"
+                android:layout_marginRight="-8dp"
+                android:layout_marginTop="-8dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:paddingLeft="65dp"
+                android:text="@string/add_city"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/add_city"
+                android:src="@mipmap/add"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+
+            <Button
+                android:id="@+id/choose_theme"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="-8dp"
+                android:layout_marginLeft="-8dp"
+                android:layout_marginRight="-8dp"
+                android:layout_marginTop="-8dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:paddingLeft="65dp"
+                android:text="主题皮肤"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/add_city"
+                android:src="@mipmap/choose_theme"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#FFFFFF">
+
+            <Button
+                android:id="@+id/setting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="-8dp"
+                android:layout_marginLeft="-8dp"
+                android:layout_marginRight="-8dp"
+                android:layout_marginTop="-8dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:paddingLeft="65dp"
+                android:text="@string/setting"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/setting"
+                android:src="@mipmap/setting"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#FFFFFF">
+
+            <Button
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="-8dp"
+                android:layout_marginLeft="-8dp"
+                android:layout_marginRight="-8dp"
+                android:layout_marginTop="-8dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:paddingLeft="65dp"
+                android:text="@string/about"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/about"
+                android:src="@mipmap/about"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

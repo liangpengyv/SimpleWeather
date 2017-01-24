@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorPrimary1">#00B2EE</color>
+    <color name="colorPrimaryDark1">#009ACD</color>
+
+    <color name="colorPrimary2">#EE9A00</color>
+    <color name="colorPrimaryDark2">#CD8500</color>
+
+    <color name="colorPrimary3">#4EEE94</color>
+    <color name="colorPrimaryDark3">#43CD80</color>
+
+    <color name="colorPrimary4">#EE4000</color>
+    <color name="colorPrimaryDark4">#CD3700</color>
+
+    <color name="colorPrimary5">#EE30A7</color>
+    <color name="colorPrimaryDark5">#CD2990</color>
+
+    <color name="colorPrimary6">#0000EE</color>
+    <color name="colorPrimaryDark6">#0000CD</color>
+
+    <color name="colorPrimary7">#CDCD00</color>
+    <color name="colorPrimaryDark7">#8B8B00</color>
+
+    <color name="colorPrimary8">#3F51B5</color>
+    <color name="colorPrimaryDark8">#303F9F</color>
+
+    <color name="colorPrimary9">#708090</color>
+    <color name="colorPrimaryDark9">#778899</color>
+
+    <color name="colorPrimary10">#3CB371</color>
+    <color name="colorPrimaryDark10">#2E8B57</color>
+
+    <color name="colorPrimary11">#FF4500</color>
+    <color name="colorPrimaryDark11">#FF0000</color>
+
+    <color name="colorPrimary12">#9F79EE</color>
+    <color name="colorPrimaryDark12">#8968CD</color>
+
 </resources>

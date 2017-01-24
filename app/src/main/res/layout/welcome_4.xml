@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/welcome_icon_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/about"
+        android:src="@mipmap/welcome_4"
+        android:tint="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/welcome_text_41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:text="@string/welcome_text_41"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/welcome_text_42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/welcome_icon_4"
+        android:layout_below="@id/welcome_text_41"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/welcome_text_42"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/welcome_text_43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="@string/welcome_text_43"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/welcome_start"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_above="@id/welcome_text_43"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/welcome_start"
+        android:text="@string/welcome_start"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"/>
+
+</RelativeLayout>

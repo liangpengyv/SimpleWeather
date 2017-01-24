@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp">
+
+                <ImageView
+                    android:id="@+id/ic_bottom"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@mipmap/ic_00"
+                    android:tint="@android:color/white"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    android:tint="@null"/>
+
+                <TextView
+                    android:id="@+id/app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ic_bottom"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/app_name"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/app_name"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/about_app"
+                    android:textColor="#787878"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#BEBEBE"/>
+
+                <Button
+                    android:id="@+id/share_app"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#00000000"
+                    android:drawableLeft="@mipmap/share_app"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:text="      分享应用给朋友"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#BEBEBE"/>
+
+                <Button
+                    android:id="@+id/check_welcome"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#00000000"
+                    android:drawableLeft="@mipmap/check_welcome"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:text="      查看欢迎页"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#BEBEBE"/>
+
+                <Button
+                    android:id="@+id/check_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#00000000"
+                    android:drawableLeft="@mipmap/check_version"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:text="      检查新版本"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#BEBEBE"/>
+
+                <Button
+                    android:id="@+id/feed_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#00000000"
+                    android:drawableLeft="@mipmap/feed_back"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:text="      Bug ＆ 建议反馈"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#BEBEBE"/>
+
+                <Button
+                    android:id="@+id/project_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#00000000"
+                    android:drawableLeft="@mipmap/project_address"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:text="      GitHub 地址"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/about_author"
+                    android:textColor="#787878"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#BEBEBE"/>
+
+                <Button
+                    android:id="@+id/my_blog"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#00000000"
+                    android:drawableLeft="@mipmap/my_blog"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:text="      我的博客"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#BEBEBE"/>
+
+                <Button
+                    android:id="@+id/qq_qun"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#00000000"
+                    android:drawableLeft="@mipmap/qq_qun"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:text="      企鹅群"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/thank_support"
+                    android:textColor="#787878"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#BEBEBE"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="6dp"
+                    android:singleLine="true"
+                    android:text="@string/thand_2"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="6dp"
+                    android:singleLine="true"
+                    android:text="@string/thand_3"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="6dp"
+                    android:singleLine="true"
+                    android:text="@string/thand_4"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="6dp"
+                    android:singleLine="true"
+                    android:text="@string/thand_5"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="6dp"
+                    android:singleLine="true"
+                    android:text="@string/thand_6"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="6dp"
+                    android:singleLine="true"
+                    android:text="@string/thand_7"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="6dp"
+                    android:singleLine="true"
+                    android:text="@string/thand_8"
+                    android:textSize="13sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
