@@ -35,7 +35,7 @@ public class FeedBackACtivity extends Activity implements OnClickListener {
 
         SharedPreferences prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
         int chooseTheme = prefs.getInt("choose_theme", 1);
-        switch (chooseTheme){
+        switch (chooseTheme) {
             case 1:
                 setTheme(R.style.AppTheme1);
                 break;

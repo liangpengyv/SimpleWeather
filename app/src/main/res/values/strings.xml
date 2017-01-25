@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SimpleWeather</string>
+    <string name="app_name">简约天气</string>
     <string name="ic_describe">天气图片</string>
     <string name="city_icon">城市图标</string>
     <string name="nonce_city">当前城市</string>

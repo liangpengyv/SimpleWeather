@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true" >
+        android:layout_centerInParent="true">
 
         <RelativeLayout
             android:id="@+id/temp_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true" >
+            android:layout_centerVertical="true">
 
             <TextView
                 android:id="@+id/widget1_time"
@@ -21,7 +21,7 @@
                 android:layout_centerHorizontal="true"
                 android:clickable="true"
                 android:textColor="@android:color/white"
-                android:textSize="50sp" />
+                android:textSize="50sp"/>
 
             <TextView
                 android:id="@+id/widget1_date"
@@ -30,7 +30,7 @@
                 android:layout_below="@id/widget1_time"
                 android:layout_centerHorizontal="true"
                 android:textColor="@android:color/white"
-                android:textSize="13sp" />
+                android:textSize="13sp"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="30dp"
-            android:layout_toRightOf="@id/temp_1" >
+            android:layout_toRightOf="@id/temp_1">
 
             <ImageView
                 android:id="@+id/widget1_weather_icon"
@@ -48,17 +48,17 @@
                 android:layout_marginTop="10dp"
                 android:clickable="true"
                 android:contentDescription="@string/city_icon"
-                android:tint="@android:color/white" />
+                android:tint="@android:color/white"/>
 
             <TextView
                 android:id="@+id/widget1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/widget1_weather_icon"
-                android:layout_marginTop="3dp"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
                 android:textColor="@android:color/white"
-                android:textSize="13sp" />
+                android:textSize="13sp"/>
         </RelativeLayout>
     </RelativeLayout>
 
