@@ -120,7 +120,7 @@ public class AboutActivity extends Activity implements OnClickListener {
                 finish();
                 break;
             case R.id.share_app:
-                ShareUtils.share(null, "最简洁、最轻巧的天气软件：简约天气\n快来下载吧~\n\n点击下载：http://fir.im/SimpleWeather", this);
+                ShareUtils.share(null, "最简洁、最轻巧的天气软件：简约天气\n快来下载吧~\n\n点击下载：http://www.coolapk.com/apk/online.laoliang.simpleweather", this);
                 break;
             case R.id.check_welcome:
                 Intent intent_welcome = new Intent(this, WelcomeActivity.class);
