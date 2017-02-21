@@ -39,7 +39,8 @@ public class CheckForUpdateUtil {
                     String versionShort = jsonObject.getString("versionShort");
                     String build = jsonObject.getString("build");
                     final String direct_install_url = jsonObject.getString("direct_install_url");
-                    final String update_url = jsonObject.getString("update_url");
+                    //final String update_url = jsonObject.getString("update_url");
+                    final String update_url = "http://www.coolapk.com/apk/online.laoliang.simpleweather";
                     JSONObject binary = jsonObject.getJSONObject("binary");
                     int fsize = binary.getInt("fsize") / 1024;
 

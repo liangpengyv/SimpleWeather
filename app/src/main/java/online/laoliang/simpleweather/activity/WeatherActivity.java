@@ -42,6 +42,9 @@ import online.laoliang.simpleweather.util.Utility;
 
 public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener, OnClickListener {
 
+    //定义当前活动的一个实例，用于在其他活动类中调用
+    protected static Activity instance = null;
+
     // 滑动刷新
     private SwipeRefreshLayout swipe_container;
 
@@ -136,6 +139,8 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
     private TextView divide_4;
 
     private void findView() {
+
+        instance = this;
 
         swipe_container = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
         swipe_container.setOnRefreshListener(this);
@@ -563,6 +568,9 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             case "中雪":
                 icId = R.mipmap.weather_snow_moderate;
                 break;
+            case "阵雪":
+                icId = R.mipmap.weather_snow_shower;
+                break;
             case "暴雪":
                 icId = R.mipmap.weather_snow_torrential;
                 break;
@@ -627,9 +635,9 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
                 finish();
                 break;
             case R.id.choose_theme:
-                Intent intent = new Intent(this, ChooseThemeActivity.class);
+                Intent intent_choose_theme = new Intent(this, ChooseThemeActivity.class);
                 drawer_layout.closeDrawers();
-                startActivity(intent);
+                startActivity(intent_choose_theme);
                 break;
             case R.id.setting:
                 Intent intent_setting = new Intent(this, SettingActivity.class);
@@ -722,7 +730,7 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
 
                         alert = null;
                         builder = new AlertDialog.Builder(WeatherActivity.this, android.R.style.Theme_Material_Light_Dialog_Alert);
-                        alert = builder.setMessage("    下滑可以刷新天气  ☟▼\n\n  长按城市列表可删除哦   (∩_∩)").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        alert = builder.setMessage("    下滑可以刷新天气  ☟▼\n\n  长按城市列表可删除哦   (∩_∩)").setCancelable(false).setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                             }
