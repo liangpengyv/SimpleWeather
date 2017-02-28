@@ -248,6 +248,10 @@ public class Utility {
         editor.putString("low_00", low_00);
         editor.putString("date_00", date_00);
         editor.putString("type_00", type_00);
+        //得到的“昨日风力”如果是微风，就总是少一个“级”字——强迫症优化
+        if (fengli_00.equals("微风")) {
+            fengli_00 = "微风级";
+        }
         editor.putString("fengli_00", fengli_00);
 
         editor.putString("high_0", high_0);

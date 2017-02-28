@@ -118,7 +118,7 @@ public class ChooseAreaActivity extends Activity implements OnClickListener {
 
         findView();
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dataList);
+        adapter = new ArrayAdapter<String>(this, R.layout.choosecity_item, dataList);
         listView.setAdapter(adapter);
         simpleWeatherDB = SimpleWeatherDB.getInstance(this);
         listView.setOnItemClickListener(new OnItemClickListener() {

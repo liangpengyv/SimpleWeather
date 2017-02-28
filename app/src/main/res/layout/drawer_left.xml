@@ -3,8 +3,7 @@
                 android:id="@+id/menu_list"
                 android:layout_width="250dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:orientation="vertical">
+                android:layout_gravity="start">
 
     <RelativeLayout
         android:id="@+id/title_city"
@@ -42,7 +41,7 @@
             android:layout_marginLeft="18dp"
             android:text="@string/nonce_city"
             android:textColor="#FFFFFF"
-            android:textSize="15sp"/>
+            android:textSize="15dp"/>
 
         <TextView
             android:id="@+id/nonce_city_name"
@@ -51,7 +50,7 @@
             android:layout_alignLeft="@id/nonce_city"
             android:layout_below="@id/nonce_city"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"/>
+            android:textSize="20dp"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -67,7 +66,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/city_list"
-            android:textSize="15sp"/>
+            android:textSize="13dp"/>
     </RelativeLayout>
 
     <ListView
@@ -99,7 +98,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/choose"
-            android:textSize="15sp"/>
+            android:textSize="13dp"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -126,7 +125,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="65dp"
                 android:text="@string/add_city"
-                android:textSize="15sp"/>
+                android:textSize="15dp"/>
 
             <ImageView
                 android:layout_width="25dp"
@@ -153,7 +152,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="65dp"
                 android:text="主题皮肤"
-                android:textSize="15sp"/>
+                android:textSize="15dp"/>
 
             <ImageView
                 android:layout_width="25dp"
@@ -181,7 +180,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="65dp"
                 android:text="@string/setting"
-                android:textSize="15sp"/>
+                android:textSize="15dp"/>
 
             <ImageView
                 android:layout_width="25dp"
@@ -209,7 +208,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="65dp"
                 android:text="@string/about"
-                android:textSize="15sp"/>
+                android:textSize="15dp"/>
 
             <ImageView
                 android:layout_width="25dp"

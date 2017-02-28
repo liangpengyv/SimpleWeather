@@ -20,7 +20,7 @@
         android:layout_marginTop="80dp"
         android:text="@string/welcome_text_41"
         android:textColor="@android:color/white"
-        android:textSize="30sp"/>
+        android:textSize="30dp"/>
 
     <TextView
         android:id="@+id/welcome_text_42"
@@ -32,7 +32,7 @@
         android:layout_marginTop="10dp"
         android:text="@string/welcome_text_42"
         android:textColor="@android:color/white"
-        android:textSize="25sp"/>
+        android:textSize="25dp"/>
 
     <TextView
         android:id="@+id/welcome_text_43"
@@ -43,7 +43,7 @@
         android:layout_marginBottom="40dp"
         android:text="@string/welcome_text_43"
         android:textColor="@android:color/white"
-        android:textSize="30sp"/>
+        android:textSize="30dp"/>
 
     <Button
         android:id="@+id/welcome_start"
@@ -54,6 +54,6 @@
         android:background="@mipmap/welcome_start"
         android:text="@string/welcome_start"
         android:textColor="@android:color/white"
-        android:textSize="13sp"/>
+        android:textSize="13dp"/>
 
 </RelativeLayout>

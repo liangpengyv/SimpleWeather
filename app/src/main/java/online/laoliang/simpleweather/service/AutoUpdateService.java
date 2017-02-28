@@ -41,11 +41,11 @@ public class AutoUpdateService extends Service {
 
         }).start();
 
-        if (intent != null && intent.getIntExtra("anHour", 1) != -1) {
-            anHour = intent.getIntExtra("anHour", 1) * 60 * 60 * 1000;
+        if (intent != null && intent.getIntExtra("anHour", 2) != -1) {
+            anHour = intent.getIntExtra("anHour", 2) * 60 * 60 * 1000;
         } else {
             SharedPreferences prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
-            int temp = prefs.getInt("update_frequency", 0);
+            int temp = prefs.getInt("update_frequency", 1);
             switch (temp) {
                 case 0:
                     anHour = 1 * 60 * 60 * 1000;

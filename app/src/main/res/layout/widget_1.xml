@@ -21,7 +21,7 @@
                 android:layout_centerHorizontal="true"
                 android:clickable="true"
                 android:textColor="@android:color/white"
-                android:textSize="50sp"/>
+                android:textSize="50dp"/>
 
             <TextView
                 android:id="@+id/widget1_date"
@@ -30,7 +30,7 @@
                 android:layout_below="@id/widget1_time"
                 android:layout_centerHorizontal="true"
                 android:textColor="@android:color/white"
-                android:textSize="13sp"/>
+                android:textSize="13dp"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -58,7 +58,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="3dp"
                 android:textColor="@android:color/white"
-                android:textSize="13sp"/>
+                android:textSize="13dp"/>
         </RelativeLayout>
     </RelativeLayout>
 

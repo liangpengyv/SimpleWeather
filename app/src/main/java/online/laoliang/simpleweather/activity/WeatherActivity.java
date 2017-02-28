@@ -287,7 +287,7 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
 
         // 根据设置记录，判断是否需要启动后台更新服务
         prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
-        boolean isBackUpdate = prefs.getBoolean("back_update", false);
+        boolean isBackUpdate = prefs.getBoolean("back_update", true);
         if (isBackUpdate) {
             Intent i = new Intent(this, AutoUpdateService.class);
             i.putExtra("anHour", -1);
@@ -362,7 +362,7 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
                             // 更新城市列表并展示
                             updateCityList(city, "add");
                             closeProgressDialog();
-                            ToastUtil.showToast(WeatherActivity.this, "天气已是最新 ╰(￣▽￣)╭", Toast.LENGTH_SHORT);
+                            ToastUtil.showToast(WeatherActivity.this, "天气已是最新  \\(^o^)/~", Toast.LENGTH_SHORT);
                         }
                     });
                 }
@@ -389,11 +389,10 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
      */
     private void showWeather(String cityName) {
         if (cityName == null) {
-            city_name_tv.setText("☜ 立即添加城市");
+            city_name_tv.setText("一个城市也没有");
             nonce_city_name.setText("N/A");
             current_date_tv.setText(null);
-            wendu_tv.setText("(●￣(ｴ)￣●)");
-            wendu_tv.setTextSize(30);
+            wendu_tv.setText("☹");
 
             high_00_tv.setText(null);
             low_00_tv.setText(null);
@@ -460,7 +459,6 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             nonce_city_name.setText(prefs.getString("city", null));
             current_date_tv.setText(prefs.getString("current_date", null));
             wendu_tv.setText(prefs.getString("wendu", null));
-            wendu_tv.setTextSize(110);
 
             high_00_tv.setText(prefs.getString("high_00", null));
             low_00_tv.setText(prefs.getString("low_00", null));
@@ -615,14 +613,20 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
         switch (v.getId()) {
             case R.id.share_weather:
                 String fileName = "简约天气-分享.jpeg";
-                if (ScreenShotUtils.shotBitmap(WeatherActivity.this, Environment.getExternalStorageDirectory().getPath() + File.separator + fileName)) {
+                SharedPreferences prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
+                String cityName = prefs.getString("nonce_city", null);
+                prefs = getSharedPreferences("data_city", MODE_PRIVATE);
+                final String weatherCode = prefs.getString(cityName, null);
+                if (TextUtils.isEmpty(weatherCode)) {
+                    ToastUtil.showToast(WeatherActivity.this, "☜ 亲！先添加一个城市吧", Toast.LENGTH_SHORT);
+                } else if (ScreenShotUtils.shotBitmap(WeatherActivity.this, Environment.getExternalStorageDirectory().getPath() + File.separator + fileName)) {
                     ToastUtil.showToast(this, "分享天气给朋友", Toast.LENGTH_SHORT);
                     Intent intent = new Intent(WeatherActivity.this, WeatherActivity.class);
                     startActivity(intent);
                     finish();
                     ShareUtils.share(Environment.getExternalStorageDirectory().getPath() + File.separator + fileName, "来自简约天气的分享", WeatherActivity.this);
                 } else {
-                    ToastUtil.showToast(WeatherActivity.this, "资源获取失败", Toast.LENGTH_SHORT);
+                    ToastUtil.showToast(WeatherActivity.this, "        一键截图分享失败！\n\n请尝试打开存储空间权限哦", Toast.LENGTH_SHORT);
                 }
                 break;
             case R.id.menu_left:

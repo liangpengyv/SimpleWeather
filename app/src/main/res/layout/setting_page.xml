@@ -36,7 +36,7 @@
                     android:layout_toRightOf="@id/simple_11"
                     android:text="后台自动刷新天气"
                     android:textColor="@android:color/black"
-                    android:textSize="15sp"/>
+                    android:textSize="15dp"/>
 
                 <Switch
                     android:id="@+id/back_update"
@@ -82,7 +82,7 @@
                     android:layout_toRightOf="@id/simple_22"
                     android:text="自动检查软件更新"
                     android:textColor="@android:color/black"
-                    android:textSize="15sp"/>
+                    android:textSize="15dp"/>
 
                 <Switch
                     android:id="@+id/version_update"

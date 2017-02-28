@@ -38,7 +38,7 @@ public class SettingActivity extends Activity implements OnClickListener, Compou
         adapter = new ArrayAdapter<>(this, R.layout.spinner_item, frequency);
         update_frequency.setAdapter(adapter);
         SharedPreferences prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
-        update_frequency.setSelection(prefs.getInt("update_frequency", 0), true);
+        update_frequency.setSelection(prefs.getInt("update_frequency", 1), true);
         update_frequency.setOnItemSelectedListener(new OnItemSelectedListener() {
 
             @Override
@@ -59,7 +59,7 @@ public class SettingActivity extends Activity implements OnClickListener, Compou
 
         back_update = (Switch) findViewById(R.id.back_update);
         back_update.setOnCheckedChangeListener(this);
-        if (prefs.getBoolean("back_update", false)) {
+        if (prefs.getBoolean("back_update", true)) {
             back_update.setChecked(true);
             update_frequency.setEnabled(true);
         } else {
@@ -83,7 +83,7 @@ public class SettingActivity extends Activity implements OnClickListener, Compou
 
         SharedPreferences prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
         int chooseTheme = prefs.getInt("choose_theme", 1);
-        switch (chooseTheme){
+        switch (chooseTheme) {
             case 1:
                 setTheme(R.style.AppTheme1);
                 break;
@@ -158,7 +158,7 @@ public class SettingActivity extends Activity implements OnClickListener, Compou
                     editor.commit();
                     update_frequency.setEnabled(true);
                     Intent intent = new Intent(this, AutoUpdateService.class);
-                    switch (prefs.getInt("update_frequency", 0)) {
+                    switch (prefs.getInt("update_frequency", 2)) {
                         case 0:
                             intent.putExtra("anHour", 1);
                             break;

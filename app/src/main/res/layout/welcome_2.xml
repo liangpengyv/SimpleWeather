@@ -20,7 +20,7 @@
         android:layout_marginTop="80dp"
         android:text="@string/welcome_text_21"
         android:textColor="@android:color/white"
-        android:textSize="30sp"/>
+        android:textSize="30dp"/>
 
     <TextView
         android:id="@+id/welcome_text_22"
@@ -32,7 +32,7 @@
         android:layout_marginTop="10dp"
         android:text="@string/welcome_text_22"
         android:textColor="@android:color/white"
-        android:textSize="25sp"/>
+        android:textSize="25dp"/>
 
     <TextView
         android:id="@+id/welcome_text_23"
@@ -43,6 +43,6 @@
         android:layout_marginBottom="40dp"
         android:text="@string/welcome_text_23"
         android:textColor="@android:color/white"
-        android:textSize="30sp"/>
+        android:textSize="30dp"/>
 
 </RelativeLayout>

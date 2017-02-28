@@ -10,14 +10,15 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp">
+            android:layout_height="260dp">
 
             <TextView
                 android:id="@+id/wendu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF"
+                android:textSize="120dp"/>
 
             <TextView
                 android:id="@+id/du_0"
@@ -26,7 +27,7 @@
                 android:layout_alignTop="@id/wendu"
                 android:layout_toRightOf="@id/wendu"
                 android:textColor="#FFFFFF"
-                android:textSize="40sp"/>
+                android:textSize="50dp"/>
 
             <TextView
                 android:id="@+id/type_000"
@@ -35,17 +36,7 @@
                 android:layout_above="@id/wendu"
                 android:layout_centerHorizontal="true"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"/>
-
-            <TextView
-                android:id="@+id/current_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignTop="@id/type_000"
-                android:layout_marginRight="10dp"
-                android:textColor="#FFFFFF"
-                android:textSize="13sp"/>
+                android:textSize="20dp"/>
 
             <LinearLayout
                 android:id="@+id/high_0_low_0"
@@ -60,22 +51,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#FFFFFF"
-                    android:textSize="20sp"/>
+                    android:textSize="20dp"/>
 
                 <TextView
                     android:id="@+id/divide_000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#FFFFFF"
-                    android:textSize="18sp"/>
+                    android:textSize="18dp"/>
 
                 <TextView
                     android:id="@+id/low_000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#FFFFFF"
-                    android:textSize="15sp"/>
+                    android:textSize="15dp"/>
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/current_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/high_0_low_0"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:textColor="#FFFFFF"
+                android:textSize="13dp"/>
+
         </RelativeLayout>
 
         <LinearLayout
@@ -96,7 +98,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <ImageView
                     android:id="@+id/ic_00_bottom"
@@ -121,7 +124,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
                     android:layout_toLeftOf="@id/ic_00_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/fengli_00"
@@ -130,7 +134,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/ic_00_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/low_00"
@@ -139,7 +144,8 @@
                     android:layout_alignBottom="@+id/high_00"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/divide_00"
@@ -148,7 +154,7 @@
                     android:layout_alignBottom="@+id/high_00"
                     android:layout_toLeftOf="@id/low_00"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"/>
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@id/high_00"
@@ -157,7 +163,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@id/divide_00"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"/>
+                    android:textSize="18dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -172,7 +178,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <ImageView
                     android:id="@+id/ic_0_bottom"
@@ -197,7 +204,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
                     android:layout_toLeftOf="@id/ic_0_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/fengli_0"
@@ -206,7 +214,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/ic_0_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/low_0"
@@ -215,7 +224,8 @@
                     android:layout_alignBottom="@+id/high_0"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/divide_0"
@@ -224,7 +234,7 @@
                     android:layout_alignBottom="@+id/high_0"
                     android:layout_toLeftOf="@id/low_0"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"/>
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@id/high_0"
@@ -233,7 +243,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@id/divide_0"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"/>
+                    android:textSize="18dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -248,7 +258,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <ImageView
                     android:id="@+id/ic_1_bottom"
@@ -273,7 +284,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
                     android:layout_toLeftOf="@id/ic_1_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/fengli_1"
@@ -282,7 +294,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/ic_1_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/low_1"
@@ -291,7 +304,8 @@
                     android:layout_alignBottom="@+id/high_1"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/divide_1"
@@ -300,7 +314,7 @@
                     android:layout_alignBottom="@+id/high_1"
                     android:layout_toLeftOf="@id/low_1"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"/>
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@id/high_1"
@@ -309,7 +323,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@id/divide_1"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"/>
+                    android:textSize="18dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -324,7 +338,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <ImageView
                     android:id="@+id/ic_2_bottom"
@@ -349,7 +364,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
                     android:layout_toLeftOf="@id/ic_2_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/fengli_2"
@@ -358,7 +374,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/ic_2_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/low_2"
@@ -367,7 +384,8 @@
                     android:layout_alignBottom="@+id/high_2"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/divide_2"
@@ -376,7 +394,7 @@
                     android:layout_alignBottom="@+id/high_2"
                     android:layout_toLeftOf="@id/low_2"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"/>
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@id/high_2"
@@ -385,7 +403,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@id/divide_2"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"/>
+                    android:textSize="18dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -400,7 +418,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <ImageView
                     android:id="@+id/ic_3_bottom"
@@ -425,7 +444,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
                     android:layout_toLeftOf="@id/ic_3_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/fengli_3"
@@ -434,7 +454,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/ic_3_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/low_3"
@@ -443,7 +464,8 @@
                     android:layout_alignBottom="@+id/high_3"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/divide_3"
@@ -452,7 +474,7 @@
                     android:layout_alignBottom="@+id/high_3"
                     android:layout_toLeftOf="@id/low_3"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"/>
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@id/high_3"
@@ -461,7 +483,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@id/divide_3"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"/>
+                    android:textSize="18dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -476,7 +498,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <ImageView
                     android:id="@+id/ic_4_bottom"
@@ -501,7 +524,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
                     android:layout_toLeftOf="@id/ic_4_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/fengli_4"
@@ -510,7 +534,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/ic_4_bottom"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/low_4"
@@ -519,7 +544,8 @@
                     android:layout_alignBottom="@+id/high_4"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/divide_4"
@@ -528,7 +554,7 @@
                     android:layout_alignBottom="@+id/high_4"
                     android:layout_toLeftOf="@id/low_4"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"/>
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@id/high_4"
@@ -537,7 +563,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@id/divide_4"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"/>
+                    android:textSize="18dp"/>
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
