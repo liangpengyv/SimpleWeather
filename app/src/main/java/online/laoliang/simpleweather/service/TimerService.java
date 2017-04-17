@@ -7,6 +7,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.IBinder;
 import android.widget.RemoteViews;
 
@@ -28,6 +29,12 @@ public class TimerService extends Service {
 
     // 组件名
     public ComponentName cn;
+    private ComponentName componentName = null;
+    private ComponentName componentName1 = new ComponentName("com.android.deskclock", "com.android.deskclock.DeskClock");
+    private ComponentName componentName2 = new ComponentName("com.android.deskclock", "com.android.deskclock.AlarmsMainActivity");
+    private ComponentName componentName3 = new ComponentName("com.android.deskclock", "com.android.deskclock.DeskClockTabActivity");
+    private ComponentName componentName4 = new ComponentName("com.android.alarmclock", "com.android.alarmclock.DeskClock");
+    private ComponentName componentName5 = new ComponentName("com.android.alarmclock", "com.meizu.flyme.alarmclock.DeskClock");
 
     // AppWidget管理器
     public AppWidgetManager manager;
@@ -47,6 +54,9 @@ public class TimerService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        findClock();
+
         timer = new Timer();
         timer.schedule(new TimerTask() {
 
@@ -55,6 +65,35 @@ public class TimerService extends Service {
                 updateViews();
             }
         }, 0, 1000);
+    }
+
+    private void findClock(){
+        try {
+            getPackageManager().getResourcesForActivity(componentName1);
+            componentName = componentName1;
+        } catch (PackageManager.NameNotFoundException e1){
+            try {
+                getPackageManager().getResourcesForActivity(componentName2);
+                componentName = componentName2;
+            } catch (PackageManager.NameNotFoundException e2){
+                try {
+                    getPackageManager().getResourcesForActivity(componentName3);
+                    componentName = componentName3;
+                } catch (PackageManager.NameNotFoundException e3){
+                    try {
+                        getPackageManager().getResourcesForActivity(componentName4);
+                        componentName = componentName4;
+                    } catch (PackageManager.NameNotFoundException e4){
+                        try {
+                            getPackageManager().getResourcesForActivity(componentName5);
+                            componentName = componentName5;
+                        } catch (PackageManager.NameNotFoundException e5){
+                            e5.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private void updateViews() {
@@ -70,7 +109,7 @@ public class TimerService extends Service {
 
         // 为时间视图注册监听事件，打开系统时钟
         Intent intent_2 = new Intent();
-        intent_2.setComponent(new ComponentName("com.android.deskclock", "com.android.deskclock.DeskClock"));
+        intent_2.setComponent(componentName);
         PendingIntent pendingIntent_2 = PendingIntent.getActivity(this, 0, intent_2, 0);
         rv.setOnClickPendingIntent(R.id.widget1_time, pendingIntent_2);
 

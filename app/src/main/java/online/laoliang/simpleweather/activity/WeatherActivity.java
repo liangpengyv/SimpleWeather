@@ -1,6 +1,5 @@
 package online.laoliang.simpleweather.activity;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -8,11 +7,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -20,6 +19,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,6 +63,9 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
     private Button choose_theme;
     private Button setting;
     private Button about;
+
+    //首页天气信息页面视图
+    private LinearLayout weather_info;
 
     // 已选城市列表
     private HashMap<String, String> cityName_weatherCode = new HashMap<String, String>(10);
@@ -148,6 +151,44 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
         drawer_layout = (DrawerLayout) findViewById(R.id.drawer_layout);
         menu_list = findViewById(R.id.menu_list);
         city_list = (ListView) findViewById(R.id.city_list);
+
+        //首页天气信息视图页面添加左右滑动监听，以实现切换城市
+        weather_info = (LinearLayout) findViewById(R.id.weather_info);
+        weather_info.setOnTouchListener(new View.OnTouchListener() {
+
+            float x1 = 0;
+            float x2 = 0;
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        x1 = event.getX();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        x2 = event.getX();
+                        ArrayList<String> temp = new ArrayList<String>(10);
+                        temp.addAll(cityName_weatherCode.keySet());
+                        SharedPreferences prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
+                        int nonceCityIndex = temp.indexOf(prefs.getString("nonce_city", null));
+                        if (x1 - x2 > 50 && temp.size() > 1) {
+                            if (nonceCityIndex + 1 < temp.size()) {
+                                showWeather(temp.get(nonceCityIndex + 1));
+                            } else {
+                                ToastUtil.showToast(WeatherActivity.this, "后面已经没有了 ☜", Toast.LENGTH_SHORT);
+                            }
+                        } else if (x2 - x1 > 50 && temp.size() > 1) {
+                            if (nonceCityIndex - 1 >= 0) {
+                                showWeather(temp.get(nonceCityIndex - 1));
+                            } else {
+                                ToastUtil.showToast(WeatherActivity.this, "☞ 前面已经没有了", Toast.LENGTH_SHORT);
+                            }
+                        }
+                        break;
+                }
+                return true;
+            }
+        });
 
         share_weather = (Button) findViewById(R.id.share_weather);
         share_weather.setOnClickListener(this);
@@ -301,11 +342,45 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             CheckForUpdateUtil.checkForUpdateInFIR(this, true);
         }
 
+        // 有县级代号时就去查询天气
         String countyCode = getIntent().getStringExtra("county_code");
         if (!TextUtils.isEmpty(countyCode)) {
-            // 有县级代号时就去查询天气
+            //如果是前2次添加城市，就弹出下滑刷新的提示信息
+            prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
+            int isFirstAddCity = prefs.getInt("first_add_city", 1);
+            if (isFirstAddCity == 1) {
+
+                alert = null;
+                builder = new AlertDialog.Builder(WeatherActivity.this, android.R.style.Theme_Material_Light_Dialog_Alert);
+                alert = builder.setMessage("首页下滑可以刷新天气哦 ☟").setCancelable(false).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                }).create(); // 创建AlertDialog对象
+                alert.show(); // 显示对话框
+
+                SharedPreferences.Editor editor = getSharedPreferences("data_setting", MODE_PRIVATE).edit();
+                editor.putInt("first_add_city", isFirstAddCity + 1);
+                editor.commit();
+            } else if (isFirstAddCity == 2) {
+
+                alert = null;
+                builder = new AlertDialog.Builder(WeatherActivity.this, android.R.style.Theme_Material_Light_Dialog_Alert);
+                alert = builder.setMessage("左右滑动可以快速切换城市哦 ☜ ☞").setCancelable(false).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                }).create(); // 创建AlertDialog对象
+                alert.show(); // 显示对话框
+
+                SharedPreferences.Editor editor = getSharedPreferences("data_setting", MODE_PRIVATE).edit();
+                editor.putInt("first_add_city", isFirstAddCity + 1);
+                editor.commit();
+            }
+
             queryWeatherCode(countyCode);
         }
+
     }
 
     /**
@@ -363,6 +438,7 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
                             updateCityList(city, "add");
                             closeProgressDialog();
                             ToastUtil.showToast(WeatherActivity.this, "天气已是最新  \\(^o^)/~", Toast.LENGTH_SHORT);
+
                         }
                     });
                 }
@@ -392,7 +468,7 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             city_name_tv.setText("一个城市也没有");
             nonce_city_name.setText("N/A");
             current_date_tv.setText(null);
-            wendu_tv.setText("☹");
+            wendu_tv.setText("N/A");
 
             high_00_tv.setText(null);
             low_00_tv.setText(null);
@@ -545,6 +621,12 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             case "中雨":
                 icId = R.mipmap.weather_rain_moderate;
                 break;
+            case "小到中雨":
+                icId = R.mipmap.weather_rain_light_moderate;
+                break;
+            case "中到大雨":
+                icId = R.mipmap.weather_rain_moderate_heavy;
+                break;
             case "阵雨":
                 icId = R.mipmap.weather_rain_shower;
                 break;
@@ -619,12 +701,12 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
                 final String weatherCode = prefs.getString(cityName, null);
                 if (TextUtils.isEmpty(weatherCode)) {
                     ToastUtil.showToast(WeatherActivity.this, "☜ 亲！先添加一个城市吧", Toast.LENGTH_SHORT);
-                } else if (ScreenShotUtils.shotBitmap(WeatherActivity.this, Environment.getExternalStorageDirectory().getPath() + File.separator + fileName)) {
+                } else if (ScreenShotUtils.shotBitmap(WeatherActivity.this, getExternalCacheDir() + File.separator + fileName)) {
                     ToastUtil.showToast(this, "分享天气给朋友", Toast.LENGTH_SHORT);
                     Intent intent = new Intent(WeatherActivity.this, WeatherActivity.class);
                     startActivity(intent);
                     finish();
-                    ShareUtils.share(Environment.getExternalStorageDirectory().getPath() + File.separator + fileName, "来自简约天气的分享", WeatherActivity.this);
+                    ShareUtils.share(getExternalCacheDir() + File.separator + fileName, "来自简约天气的分享", WeatherActivity.this);
                 } else {
                     ToastUtil.showToast(WeatherActivity.this, "        一键截图分享失败！\n\n请尝试打开存储空间权限哦", Toast.LENGTH_SHORT);
                 }
@@ -659,14 +741,14 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
     }
 
     /**
-     * 更新城市列表: 1/(cityName, null)-删除cityName 2/(null,
-     * "remove")-删除cityName后更新列表，并指定第一个城市为nonce_city，然后展示当前城市 3/(cityName,
-     * "add")-添加cityName到城市列表，并指定为nonce_city，然后展示当前城市 4/(null,
-     * null)-更新城市列表，然后展示当前城市
+     * 更新城市列表:
+     * 1/(cityName, null)-删除cityName.
+     * 2/(null, "remove")-删除cityName后更新列表，并指定第一个城市为nonce_city，然后展示当前城市.
+     * 3/(cityName, "add")-添加cityName到城市列表，并指定为nonce_city，然后展示当前城市.
+     * 4/(null, null)-更新城市列表，然后展示当前城市.
      *
      * @author 梁鹏宇 2016-8-7 下午2:07:58
      */
-    @SuppressWarnings("unchecked")
     private void updateCityList(String cityName, String weatherCode) {
         if (cityName != null && weatherCode == null) {
             // 只传入城市名时：删除该城市并更新
@@ -681,7 +763,7 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             // 将新添加的城市更新到HashMap和ArrayList中
             SharedPreferences prefs = getSharedPreferences("data_city", MODE_PRIVATE);
             cityName_weatherCode.clear();
-            cityName_weatherCode.putAll((HashMap<String, String>) prefs.getAll()); // 这里有一个warning错误，暂时取消显示了
+            cityName_weatherCode.putAll((HashMap<String, String>) prefs.getAll());
             cities.clear();
             ArrayList<String> temp = new ArrayList<String>(10);
             temp.addAll(cityName_weatherCode.keySet());
@@ -725,26 +807,8 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             // 为城市列表建立点击监听事件（显示点击的城市）
             city_list.setOnItemClickListener(new OnItemClickListener() {
 
-                @SuppressLint("InlinedApi")
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    SharedPreferences prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
-                    int isFirstAddCity = prefs.getInt("first_add_city", 1);
-                    if (isFirstAddCity == 1 || isFirstAddCity == 2) {
-
-                        alert = null;
-                        builder = new AlertDialog.Builder(WeatherActivity.this, android.R.style.Theme_Material_Light_Dialog_Alert);
-                        alert = builder.setMessage("    下滑可以刷新天气  ☟▼\n\n  长按城市列表可删除哦   (∩_∩)").setCancelable(false).setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        }).create(); // 创建AlertDialog对象
-                        alert.show(); // 显示对话框
-
-                        SharedPreferences.Editor editor = getSharedPreferences("data_setting", MODE_PRIVATE).edit();
-                        editor.putInt("first_add_city", isFirstAddCity + 1);
-                        editor.commit();
-                    }
                     drawer_layout.closeDrawers();
                     CityList t = cities.get(position);
                     showWeather(t.getCityName());
@@ -754,7 +818,6 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             // 为城市列表建立长按监听事件（删除长按的城市）
             city_list.setOnItemLongClickListener(new OnItemLongClickListener() {
 
-                @SuppressLint("InlinedApi")
                 @Override
                 public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 

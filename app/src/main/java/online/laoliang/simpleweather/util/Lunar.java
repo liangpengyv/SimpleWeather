@@ -13,7 +13,8 @@ public class Lunar {
     private int month;
     private int day;
     private boolean leap;
-    final static String chineseNumber[] = {"正", "二", "三", "四", "五", "六", "七", "八", "九", "十", "冬", "腊"};
+    final static String chineseNumberMonth[] = {"正", "二", "三", "四", "五", "六", "七", "八", "九", "十", "冬", "腊"};
+    final static String chineseNumberDay[] = {"一", "二", "三", "四", "五", "六", "七", "八", "九", "十"};
     static SimpleDateFormat chineseDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
 
 
@@ -160,10 +161,10 @@ public class Lunar {
         if (day == 10)
             return "初十";
         else
-            return chineseTen[day / 10] + chineseNumber[n];
+            return chineseTen[day / 10] + chineseNumberDay[n];
     }
 
     public String toString() {
-        return year + "年" + (leap ? "闰" : "") + chineseNumber[month - 1] + "月" + getChinaDayString(day);
+        return year + "年" + (leap ? "闰" : "") + chineseNumberMonth[month - 1] + "月" + getChinaDayString(day);
     }
 }

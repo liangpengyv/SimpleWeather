@@ -47,7 +47,7 @@ public class CheckForUpdateUtil {
                     if (version > getLocalVersion(context)) {
                         alert = null;
                         builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Light_Dialog_Alert);
-                        alert = builder.setTitle("检查到新版本：" + versionShort).setMessage(changelog + "\nBuild：" + build + "\n文件大小：" + fsize + "KB").setNeutralButton("以后再说", new DialogInterface.OnClickListener() {
+                        alert = builder.setTitle("检查到新版本：" + versionShort).setMessage(changelog + "\n\nBuild：" + build + "\n文件大小：" + fsize + "KB").setNeutralButton("以后再说", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                             }

@@ -3,7 +3,7 @@
     <string name="ic_describe">天气图片</string>
     <string name="city_icon">城市图标</string>
     <string name="nonce_city">当前城市</string>
-    <string name="city_list">城市列表</string>
+    <string name="city_list">城市 （长按可删除）</string>
     <string name="choose">选项</string>
     <string name="add_city">添加城市</string>
     <string name="setting">设置</string>
