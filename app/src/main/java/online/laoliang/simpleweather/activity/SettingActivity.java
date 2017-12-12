@@ -23,7 +23,6 @@ public class SettingActivity extends Activity implements OnClickListener, Compou
     private Button back;
     private TextView title_text;
     private Switch back_update;
-    private Switch version_update;
     private Spinner update_frequency;
     private ArrayAdapter<String> adapter;
     private static final String[] frequency = {"1小时", "2小时", "5小时", "8小时"};
@@ -66,15 +65,6 @@ public class SettingActivity extends Activity implements OnClickListener, Compou
             back_update.setChecked(false);
             update_frequency.setEnabled(false);
         }
-
-        version_update = (Switch) findViewById(R.id.version_update);
-        version_update.setOnCheckedChangeListener(this);
-        if (prefs.getBoolean("version_update", true)) {
-            version_update.setChecked(true);
-        } else {
-            version_update.setChecked(false);
-        }
-
     }
 
     @Override
@@ -182,17 +172,6 @@ public class SettingActivity extends Activity implements OnClickListener, Compou
                     update_frequency.setEnabled(false);
                     Intent intent = new Intent(this, AutoUpdateService.class);
                     stopService(intent);
-                }
-                break;
-            case R.id.version_update:
-                if (compoundButton.isChecked()) {
-                    SharedPreferences.Editor editor = getSharedPreferences("data_setting", MODE_PRIVATE).edit();
-                    editor.putBoolean("version_update", true);
-                    editor.commit();
-                } else {
-                    SharedPreferences.Editor editor = getSharedPreferences("data_setting", MODE_PRIVATE).edit();
-                    editor.putBoolean("version_update", false);
-                    editor.commit();
                 }
                 break;
             default:

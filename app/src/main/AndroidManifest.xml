@@ -9,16 +9,11 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
-        android:name=".model.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <meta-data
-            android:name="BUG_HD_SDK_GENERAL_KEY"
-            android:value="15121c00fdd1befb3baa9c0a18e480cf"/>
 
         <activity android:name=".activity.WeatherActivity">
             <intent-filter>

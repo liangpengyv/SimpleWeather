@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <include layout="@layout/title_bar"/>
+    <include layout="@layout/title_bar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                     android:layout_height="25dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
-                    android:src="@mipmap/check_version"/>
+                    android:src="@mipmap/check_version" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
                     android:layout_toRightOf="@id/simple_11"
                     android:text="后台自动刷新天气"
                     android:textColor="@android:color/black"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp" />
 
                 <Switch
                     android:id="@+id/back_update"
@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"/>
+                    android:layout_marginRight="20dp" />
 
             </RelativeLayout>
 
@@ -55,50 +55,12 @@
                 android:layout_marginLeft="57dp"
                 android:layout_marginRight="57dp"
                 android:layout_marginTop="-10dp"
-                android:popupBackground="@android:color/white"/>
+                android:popupBackground="@android:color/white" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="#BEBEBE"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp">
-
-                <ImageView
-                    android:id="@+id/simple_22"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="20dp"
-                    android:src="@mipmap/auto_update"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_toRightOf="@id/simple_22"
-                    android:text="自动检查软件更新"
-                    android:textColor="@android:color/black"
-                    android:textSize="15dp"/>
-
-                <Switch
-                    android:id="@+id/version_update"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"/>
-
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#BEBEBE"/>
-
+                android:background="#BEBEBE" />
         </LinearLayout>
     </ScrollView>
 

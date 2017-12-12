@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import online.laoliang.simpleweather.R;
-import online.laoliang.simpleweather.util.CheckForUpdateUtil;
 import online.laoliang.simpleweather.util.ShareUtils;
 
 public class AboutActivity extends Activity implements OnClickListener {
@@ -24,7 +23,6 @@ public class AboutActivity extends Activity implements OnClickListener {
     private TextView version;
     private Button share_app;
     private Button check_welcome;
-    private Button check_version;
     private Button feed_back;
     private Button project_address;
     private Button my_blog;
@@ -44,8 +42,6 @@ public class AboutActivity extends Activity implements OnClickListener {
         share_app.setOnClickListener(this);
         check_welcome = (Button) findViewById(R.id.check_welcome);
         check_welcome.setOnClickListener(this);
-        check_version = (Button) findViewById(R.id.check_version);
-        check_version.setOnClickListener(this);
         feed_back = (Button) findViewById(R.id.feed_back);
         feed_back.setOnClickListener(this);
         project_address = (Button) findViewById(R.id.project_address);
@@ -126,9 +122,6 @@ public class AboutActivity extends Activity implements OnClickListener {
                 Intent intent_welcome = new Intent(this, WelcomeActivity.class);
                 startActivity(intent_welcome);
                 finish();
-                break;
-            case R.id.check_version:
-                CheckForUpdateUtil.checkForUpdateInFIR(this, false);
                 break;
             case R.id.feed_back:
                 Intent intent_feedback = new Intent(this, FeedBackACtivity.class);

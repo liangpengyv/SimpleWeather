@@ -111,22 +111,6 @@
                     android:background="#BEBEBE"/>
 
                 <Button
-                    android:id="@+id/check_version"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:background="#00000000"
-                    android:drawableLeft="@mipmap/check_version"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="22dp"
-                    android:text="      检查新版本"
-                    android:textSize="15dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="#BEBEBE"/>
-
-                <Button
                     android:id="@+id/feed_back"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"

@@ -32,7 +32,6 @@ import online.laoliang.simpleweather.R;
 import online.laoliang.simpleweather.model.CityList;
 import online.laoliang.simpleweather.model.CityListAdapter;
 import online.laoliang.simpleweather.service.AutoUpdateService;
-import online.laoliang.simpleweather.util.CheckForUpdateUtil;
 import online.laoliang.simpleweather.util.HttpCallbackListener;
 import online.laoliang.simpleweather.util.HttpUtil;
 import online.laoliang.simpleweather.util.ScreenShotUtils;
@@ -333,13 +332,6 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             Intent i = new Intent(this, AutoUpdateService.class);
             i.putExtra("anHour", -1);
             startService(i);
-        }
-
-        // 根据设置记录，判断是否检查软件版本
-        prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
-        boolean isVersionUpdate = prefs.getBoolean("version_update", true);
-        if (isVersionUpdate) {
-            CheckForUpdateUtil.checkForUpdateInFIR(this, true);
         }
 
         // 有县级代号时就去查询天气
