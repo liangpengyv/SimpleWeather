@@ -238,28 +238,6 @@
                     android:layout_marginRight="25dp"
                     android:layout_marginTop="6dp"
                     android:singleLine="true"
-                    android:text="@string/thand_4"
-                    android:textSize="13dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="6dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginTop="6dp"
-                    android:singleLine="true"
-                    android:text="@string/thand_5"
-                    android:textSize="13dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="6dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginTop="6dp"
-                    android:singleLine="true"
                     android:text="@string/thand_6"
                     android:textSize="13dp"/>
 

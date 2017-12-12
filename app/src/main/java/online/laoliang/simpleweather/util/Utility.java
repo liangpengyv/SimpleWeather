@@ -3,6 +3,7 @@ package online.laoliang.simpleweather.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -191,6 +192,15 @@ public class Utility {
             String date_4 = day_4.getString("date").substring(day_4.getString("date").length() - 3);
             String type_4 = day_4.getString("type");
             String fengli_4 = day_4.getString("fengli");
+
+            // 处理json数据中“风力”字段<![CDATA[]]>问题（问题样例：<![CDATA[<3级]]>）
+            // 待服务器返回数据良好时，这里的操作可以删除
+            fengli_00 = fengli_00.substring(9, fengli_00.length() - 3);
+            fengli_0 = fengli_0.substring(9, fengli_0.length() - 3);
+            fengli_1 = fengli_1.substring(9, fengli_1.length() - 3);
+            fengli_2 = fengli_2.substring(9, fengli_2.length() - 3);
+            fengli_3 = fengli_3.substring(9, fengli_3.length() - 3);
+            fengli_4 = fengli_4.substring(9, fengli_4.length() - 3);
 
             //将服务器返回的所有天气信息存储到SharedPreferences文件中
             saveWeather(context, city, wendu, high_00, low_00, date_00, type_00, fengli_00, high_0, low_0, date_0, type_0, fengli_0, high_1, low_1, date_1, type_1, fengli_1, high_2, low_2, date_2, type_2, fengli_2, high_3, low_3, date_3, type_3, fengli_3, high_4, low_4, date_4, type_4, fengli_4);
