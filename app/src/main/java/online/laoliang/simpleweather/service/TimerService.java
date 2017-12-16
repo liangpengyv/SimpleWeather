@@ -35,6 +35,7 @@ public class TimerService extends Service {
     private ComponentName componentName3 = new ComponentName("com.android.deskclock", "com.android.deskclock.DeskClockTabActivity");
     private ComponentName componentName4 = new ComponentName("com.android.alarmclock", "com.android.alarmclock.DeskClock");
     private ComponentName componentName5 = new ComponentName("com.android.alarmclock", "com.meizu.flyme.alarmclock.DeskClock");
+    private ComponentName componentName6 = new ComponentName("com.google.android.deskclock", "com.android.deskclock.DeskClock");
 
     // AppWidget管理器
     public AppWidgetManager manager;
@@ -67,28 +68,33 @@ public class TimerService extends Service {
         }, 0, 1000);
     }
 
-    private void findClock(){
+    private void findClock() {
         try {
             getPackageManager().getResourcesForActivity(componentName1);
             componentName = componentName1;
-        } catch (PackageManager.NameNotFoundException e1){
+        } catch (PackageManager.NameNotFoundException e1) {
             try {
                 getPackageManager().getResourcesForActivity(componentName2);
                 componentName = componentName2;
-            } catch (PackageManager.NameNotFoundException e2){
+            } catch (PackageManager.NameNotFoundException e2) {
                 try {
                     getPackageManager().getResourcesForActivity(componentName3);
                     componentName = componentName3;
-                } catch (PackageManager.NameNotFoundException e3){
+                } catch (PackageManager.NameNotFoundException e3) {
                     try {
                         getPackageManager().getResourcesForActivity(componentName4);
                         componentName = componentName4;
-                    } catch (PackageManager.NameNotFoundException e4){
+                    } catch (PackageManager.NameNotFoundException e4) {
                         try {
                             getPackageManager().getResourcesForActivity(componentName5);
                             componentName = componentName5;
-                        } catch (PackageManager.NameNotFoundException e5){
-                            e5.printStackTrace();
+                        } catch (PackageManager.NameNotFoundException e5) {
+                            try {
+                                getPackageManager().getResourcesForActivity(componentName6);
+                                componentName = componentName6;
+                            } catch (PackageManager.NameNotFoundException e6) {
+                                e5.printStackTrace();
+                            }
                         }
                     }
                 }
